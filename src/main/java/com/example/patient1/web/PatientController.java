@@ -26,6 +26,8 @@ public class PatientController {
         Page<Patient> pagePatients=patientRepository.findAll(PageRequest.of(page,size));
         model.addAttribute("listPatients",pagePatients.getContent());
         model.addAttribute("pages",new int[pagePatients. getTotalPages()]);
+
+        model.addAttribute("currentPage",page);
         return  "patients";  //une vue
     }
 
